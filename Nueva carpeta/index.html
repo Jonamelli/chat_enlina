@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Aficionados - LaLiga Hypermotion (Real)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de Login -->
+    <div id="pantalla-login" class="container">
+        <h1>Foro de Aficionados</h1>
+        <p>Elige tu club de LaLiga Hypermotion para unirte al chat.</p>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="club-select">Elige tu equipo:</label>
+                <select id="club-select" required>
+                    <option value="" disabled selected>-- Selecciona un club --</option>
+                    <option value="Racing de Santander">Racing de Santander</option>
+                    <option value="Real Sporting de Gijón">Real Sporting de Gijón</option>
+                    <option value="SD Eibar">SD Eibar</option>
+                    <option value="RCD Espanyol">RCD Espanyol</option>
+                    <option value="Real Oviedo">Real Oviedo</option>
+                    <option value="Racing de Ferrol">Racing de Ferrol</option>
+                    <option value="Elche CF">Elche CF</option>
+                    <option value="Burgos CF">Burgos CF</option>
+                    <option value="Levante UD">Levante UD</option>
+                    <option value="Real Valladolid">Real Valladolid</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="username-input">Tu nombre de usuario:</label>
+                <input type="text" id="username-input" placeholder="Ej: Forofo_7" required>
+            </div>
+            <button type="submit">Entrar al Chat</button>
+        </form>
+    </div>
+
+    <!-- Pantalla de Chat -->
+    <div id="pantalla-chat" class="container hidden">
+        <header class="chat-header">
+            <h2 id="club-chat-title">Chat del Club</h2>
+            <button id="salir-btn">Salir</button>
+        </header>
+        <div id="chat-messages" class="chat-messages">
+            <!-- Los mensajes de Firebase aparecerán aquí -->
+        </div>
+        <footer class="chat-footer">
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Escribe tu mensaje..." autocomplete="off">
+                <button type="submit">Enviar</button>
+            </form>
+        </footer>
+    </div>
+
+    <!-- Scripts de Firebase. ESTO ESTÁ BIEN. -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    
+    <!-- Tu script personal. Se carga al final. -->
+    <script src="script.js"></script>
+</body>
+</html>
